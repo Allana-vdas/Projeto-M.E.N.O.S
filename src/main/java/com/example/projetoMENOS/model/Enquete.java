@@ -3,14 +3,13 @@ package com.example.projetoMENOS.model;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Entity
 @Table(name = "Enquetes")
-
 
 public class Enquete implements Serializable {
 
@@ -23,21 +22,39 @@ public class Enquete implements Serializable {
     private LocalDateTime dataFim;
     private Boolean ativa;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "enquete_id")
-    private List<OpcaoVoto> opcao = new ArrayList<>();
+    @OneToMany(mappedBy = "enquete", cascade = CascadeType.ALL)
+    private List<OpcaoVoto> opcoes = new ArrayList<>();
 
     public Enquete() {
     }
 
-    public Enquete(Long id, String titulo, String descricao, LocalDateTime dataInicio, LocalDateTime dataFim, Boolean ativa, List<OpcaoVoto> opcao) {
+    public Enquete(Long id, String titulo, String descricao, LocalDateTime dataInicio, LocalDateTime dataFim, Boolean ativa, List<OpcaoVoto> opcoes) {
         this.id = id;
         this.titulo = titulo;
         this.descricao = descricao;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
         this.ativa = ativa;
-        this.opcao = opcao;
+        this.opcoes = opcoes;
+    }
+
+    public Boolean AbrirEnquete(){
+        this.ativa = true;
+        return this.ativa;
+    }
+
+    public Boolean FecharEnquete(){
+        this.ativa = false;
+        return  this.ativa;
+    }
+
+    public void AdicionarOpcao(OpcaoVoto opcao){
+        this.opcoes.add(opcao);
+        opcao.setEnquete(this);
+    }
+
+    public Map CalcularResultado(){
+        return null;
     }
 
     public Long getId() {
@@ -88,11 +105,11 @@ public class Enquete implements Serializable {
         this.ativa = ativa;
     }
 
-    public List<OpcaoVoto> getOpcao() {
-        return opcao;
+    public List<OpcaoVoto> getOpcoes() {
+        return opcoes;
     }
 
-    public void setOpcao(List<OpcaoVoto> opcao) {
-        this.opcao = opcao;
+    public void setOpcoes(List<OpcaoVoto> opcoes) {
+        this.opcoes = opcoes;
     }
 }

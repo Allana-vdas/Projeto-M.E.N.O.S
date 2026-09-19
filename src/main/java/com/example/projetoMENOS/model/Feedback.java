@@ -17,7 +17,7 @@ public class Feedback implements Serializable {
     private LocalDate data;
 
     @ManyToOne
-    @JoinColumn(name = "estudantes_id")
+    @JoinColumn(name = "estudante_id")
     private Estudante estudante;
 
     @ManyToOne
@@ -33,6 +33,16 @@ public class Feedback implements Serializable {
         this.data = data;
         this.estudante = estudante;
         this.menu = menu;
+    }
+
+    public void Cadastrar(){
+
+    }
+    public void Editar(){
+
+    }
+    public void Excluir(){
+
     }
 
     public Long getId() {

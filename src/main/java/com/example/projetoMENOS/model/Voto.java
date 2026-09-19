@@ -4,11 +4,15 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Map;
 
 @Entity
 @Table(name = "Votos")
 
 public class Voto implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
@@ -29,6 +33,33 @@ public class Voto implements Serializable {
         this.estudante = estudante;
         this.opcaoEscolhida = opcaoEscolhida;
         this.dataVoto = dataVoto;
+    }
+
+    public Boolean AbrirEnquete(){
+        if(opcaoEscolhida != null){
+            return  opcaoEscolhida.AbrirEnquete();
+        }
+        return false;
+    }
+
+    public Boolean FecharEnquete(){
+        if(opcaoEscolhida != null){
+            return opcaoEscolhida.FecharEnquete();
+        }
+        return false;
+    }
+
+    public void AdicionarOpcao(OpcaoVoto opcao){
+        if( opcaoEscolhida != null) {
+            opcaoEscolhida.AdicionarOpcao(opcao);
+        }
+    }
+
+    public Map CalcularResultado(){
+        if ( opcaoEscolhida != null){
+            return opcaoEscolhida.CalcularResultado();
+        }
+        return null;
     }
 
     public Long getId() {
