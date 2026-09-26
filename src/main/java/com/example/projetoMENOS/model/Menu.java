@@ -59,4 +59,14 @@ public class Menu {
     public void setMerendas(List<Merenda> merendas) {
         this.merendas = merendas;
     }
+
+    @Override
+    public String toString() {
+        return "Menu{" +
+                "id=" + id +
+                ", dataInicio=" + dataInicio +
+                ", ativa=" + ativa +
+                ", merendas=" + merendas +
+                '}';
+    }
 }

@@ -68,4 +68,15 @@ public class Estudante implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return "Estudante{" +
+                "id=" + id +
+                ", matriculaEscolar='" + matriculaEscolar + '\'' +
+                ", nome='" + nome + '\'' +
+                ", senha='" + senha + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

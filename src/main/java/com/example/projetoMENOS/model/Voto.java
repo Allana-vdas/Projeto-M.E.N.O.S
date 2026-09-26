@@ -93,4 +93,14 @@ public class Voto implements Serializable {
     public void setDataVoto(LocalDateTime dataVoto) {
         this.dataVoto = dataVoto;
     }
+
+    @Override
+    public String toString() {
+        return "Voto{" +
+                "id=" + id +
+                ", estudante=" + estudante +
+                ", opcaoEscolhida=" + opcaoEscolhida +
+                ", dataVoto=" + dataVoto +
+                '}';
+    }
 }

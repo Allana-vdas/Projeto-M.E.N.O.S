@@ -78,4 +78,15 @@ public class Escola implements Serializable {
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
+
+    @Override
+    public String toString() {
+        return "Escola{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", senha='" + senha + '\'' +
+                ", cnpj='" + cnpj + '\'' +
+                '}';
+    }
 }

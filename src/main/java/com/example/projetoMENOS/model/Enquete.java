@@ -112,4 +112,17 @@ public class Enquete implements Serializable {
     public void setOpcoes(List<OpcaoVoto> opcoes) {
         this.opcoes = opcoes;
     }
+
+    @Override
+    public String toString() {
+        return "Enquete{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", dataInicio=" + dataInicio +
+                ", dataFim=" + dataFim +
+                ", ativa=" + ativa +
+                ", opcoes=" + opcoes +
+                '}';
+    }
 }

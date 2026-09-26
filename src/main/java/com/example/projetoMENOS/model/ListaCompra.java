@@ -98,4 +98,15 @@ public class ListaCompra implements Serializable {
     public void setItens(List<Produto> itens) {
         this.itens = itens;
     }
+
+    @Override
+    public String toString() {
+        return "ListaCompra{" +
+                "id=" + id +
+                ", status='" + status + '\'' +
+                ", dataCriacao=" + dataCriacao +
+                ", itens=" + itens +
+                ", estoque=" + estoque +
+                '}';
+    }
 }
