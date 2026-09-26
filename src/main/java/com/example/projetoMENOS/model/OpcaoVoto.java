@@ -72,5 +72,14 @@ public class OpcaoVoto implements Serializable {
     public void setEnquete(Enquete enquete) {
         this.enquete = enquete;
     }
+
+    @Override
+    public String toString() {
+        return "OpcaoVoto{" +
+                "id=" + id +
+                ", descricao='" + descricao + '\'' +
+                ", enquete=" + enquete +
+                '}';
+    }
 }
 

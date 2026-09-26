@@ -56,4 +56,14 @@ public class Produto implements Serializable {
     public void setQuantidade(int quantidadeDisponivel) {
         this.quantidade = quantidade;
     }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", validade=" + validade +
+                ", quantidade=" + quantidade +
+                '}';
+    }
 }

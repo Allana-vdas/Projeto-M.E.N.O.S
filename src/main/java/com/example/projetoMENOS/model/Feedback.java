@@ -84,4 +84,15 @@ public class Feedback implements Serializable {
     public void setMenu(Menu menu) {
         this.menu = menu;
     }
+
+    @Override
+    public String toString() {
+        return "Feedback{" +
+                "id=" + id +
+                ", texto='" + texto + '\'' +
+                ", data=" + data +
+                ", estudante=" + estudante +
+                ", menu=" + menu +
+                '}';
+    }
 }

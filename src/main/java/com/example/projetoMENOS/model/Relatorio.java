@@ -117,5 +117,18 @@ public class Relatorio implements Serializable {
         public void setEnquetes (List < Enquete > enquetes) {
             this.enquetes = enquetes;
         }
+
+    @Override
+    public String toString() {
+        return "Relatorio{" +
+                "id=" + id +
+                ", dataGeracao=" + dataGeracao +
+                ", dataInicio=" + dataInicio +
+                ", dataFim=" + dataFim +
+                ", totalEnquete=" + totalEnquete +
+                ", mediaVotos=" + mediaVotos +
+                ", enquetes=" + enquetes +
+                '}';
     }
+}
 

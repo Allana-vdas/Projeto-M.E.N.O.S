@@ -3,6 +3,7 @@ package com.example.projetoMENOS.model;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Entity
@@ -69,5 +70,16 @@ public class Merenda {
 
     public void setMenus(List<Menu> menus) {
         this.menus = menus;
+    }
+
+    @Override
+    public String toString() {
+        return "Merenda{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", imagem=" + Arrays.toString(imagem) +
+                ", quantidade=" + quantidade +
+                ", menus=" + menus +
+                '}';
     }
 }
